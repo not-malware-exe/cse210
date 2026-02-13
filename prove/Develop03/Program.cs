@@ -34,12 +34,12 @@ class Program
             Console.WriteLine(scripture.GetFullToggledScripture());
 
             Console.WriteLine("Please enter a character corresponding to the following:");
-            Console.WriteLine("a: hide 5 letters.");
-            Console.WriteLine("b: hide custom letters.");
-            Console.WriteLine("c: hide all letters.");
-            Console.WriteLine("d: reveal all letters.");
-            Console.WriteLine("e: enter new scripture.");
-            Console.WriteLine("any else: quit.");
+            Console.WriteLine("'a': hide 5 letters.");
+            Console.WriteLine("'b': hide custom letters.");
+            Console.WriteLine("'c': hide all letters.");
+            Console.WriteLine("'d': reveal all letters.");
+            Console.WriteLine("'e': enter new scripture.");
+            Console.WriteLine("'quit': quit.");
 
             string userResponce = Console.ReadLine();
 
@@ -69,8 +69,11 @@ class Program
 
                     scripture = new Scripture(chapter,firstVerse,lastVerse,text);
                     break;
-                default: // Ends program loop
+                case "quit":// Ends program loop
                     continueProgram = false;
+                    break;
+                default: 
+                    Console.WriteLine("Entry not valid.");
                     break;
             }
             
