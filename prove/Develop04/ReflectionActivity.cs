@@ -1,15 +1,15 @@
 
 public class ReflectionActivity : Activity
 {
-    private Random rand = new Random();
+    private Random _rand = new Random();
     
-    private string[] prompts = [
+    private string[] _prompts = [
         "Think of a time when you stood up for someone else... ",
         "Think of a time when you did something really difficult... ",
         "Think of a time when you helped someone in need... ",
         "Think of a time when you did something truly selfless... "
     ];
-    private string[] questions = [
+    private string[] _questions = [
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
         "How did you get started?",
@@ -36,13 +36,14 @@ public class ReflectionActivity : Activity
     public void PrintRandomPrompt(int pauseSeconds = 3)
     {
         Console.Clear();
-        Console.Write(prompts[rand.Next(0,prompts.GetLength(0) - 1)]);
+        Console.Write(_prompts[_rand.Next(0,_prompts.GetLength(0) - 1)]);
         PrintCountDown(pauseSeconds,false);
+        Console.Write("\n");
     }
 
     public void PrintRandomQuestion(float pauseDuration = 3.0f)
     {
-        Console.WriteLine(questions[rand.Next(0,questions.GetLength(0) - 1)]);
+        Console.WriteLine(_questions[_rand.Next(0,_questions.GetLength(0) - 1)]);
         PrintSpinnerAnimation(pauseDuration);
     }
 

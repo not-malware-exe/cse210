@@ -16,7 +16,7 @@ class Program
         do
         {
             Console.Clear();
-            Console.WriteLine("Choose... ");
+            Console.WriteLine("Choose... \n");
             for (int i = 0; i < activitiesNum; i++)
             {
                 Console.WriteLine($"{i}. Start {activities[i].GetActivityName()} Activity");

@@ -117,7 +117,7 @@ public class Activity
         Console.Clear();
 
         PrintStartingMessage();
-        Console.WriteLine(GetDescription());
+        Console.WriteLine($"{GetDescription()}\n");
         PromptDuration();
         Console.Clear();
         

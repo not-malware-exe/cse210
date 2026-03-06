@@ -1,9 +1,9 @@
 
 public class ListingActivity : Activity
 {
-    private Random rand = new Random();
+    private Random _rand = new Random();
     
-    private string[] prompts = [
+    private string[] _prompts = [
         "Who are people that you appreciate?... ",
         "What are personal strengths of yours?... ",
         "Who are people that you have helped this week?... ",
@@ -26,7 +26,7 @@ public class ListingActivity : Activity
     public void PrintRandomPrompt(int pauseSeconds = 3)
     {
         Console.Clear();
-        Console.Write(prompts[rand.Next(0,prompts.GetLength(0) - 1)]);
+        Console.Write(_prompts[_rand.Next(0,_prompts.GetLength(0) - 1)]);
         PrintCountDown(pauseSeconds);
     }
 
@@ -50,7 +50,7 @@ public class ListingActivity : Activity
         }
         else
         {
-            Console.WriteLine($"You have {remainingDuration} seconds to list as many items as you can!");
+            Console.WriteLine($"\nYou have {remainingDuration} seconds to list as many items as you can!");
             
             DateTime startTime = DateTime.Now;
             int numOfEntries = 0;
@@ -62,7 +62,7 @@ public class ListingActivity : Activity
                 remainingDuration -= (float)DateTime.Now.Subtract(startTime).TotalSeconds;
             } while(remainingDuration >= 0.0f);
 
-            Console.Write($"You typed out {numOfEntries} entries.\nYou went {-remainingDuration} seconds over... ");
+            Console.WriteLine($"\nYou typed out {numOfEntries} entries.\nYou went {-remainingDuration} seconds over... ");
             if (remainingDuration > -1.0f) Console.Write($"impressive.\n");
             else if (remainingDuration > -5.0f) Console.Write($"even my grandma can type faster than you.\n");
             else Console.Write($"I'm not paying you overtime.\n");

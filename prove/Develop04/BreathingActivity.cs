@@ -23,7 +23,7 @@ public class BreathingActivity : Activity
     public void PrintBreathOut()
     {
         Console.Clear();
-        Console.Write("     Breath out... ");
+        Console.Write("  Breath out... ");
         PrintCountDown(4);
     }
     public void PrintBreathIG(float remainderDuration)
