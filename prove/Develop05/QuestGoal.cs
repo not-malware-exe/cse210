@@ -2,7 +2,7 @@ using System.Text.Json.Nodes;
 
 public class QuestGoal : QuantityGoal
 {
-    protected bool _completed = false;
+    private bool _completed = false;
 
     public QuestGoal() : base() {}
     public QuestGoal(string name, string description, int points, int bonusPoints, int bonusCompletions, int completions = 0, bool completed = false) : base(name, description, points, bonusPoints, bonusCompletions, completions)

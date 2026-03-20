@@ -2,7 +2,7 @@ using System.Text.Json.Nodes;
 
 public class SimpleGoal : Goal
 {
-    protected bool _completed = false;
+    private bool _completed = false;
     public SimpleGoal() : base() {}
     public SimpleGoal(string name, string description, int points, bool completed = false) : base(name,description,points)
     {
