@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        new TitleCase();
+        string str = "abcabcbb";
+        Console.WriteLine(new Solution().LengthOfLongestSubstring(str));
+
     }
 }

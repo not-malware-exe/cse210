@@ -84,8 +84,9 @@ public class SaveInstance
 
                     switch (typeName) {
                         case "SimpleGoal": newGoal = new SimpleGoal(); break;
+                        case "EternalGoal": newGoal = new EternalGoal(); break;
                         case "SisypheanGoal": newGoal = new SisypheanGoal(); break;
-                        case "QuestGoal": newGoal = new QuestGoal(); break;
+                        case "ChecklistGoal": newGoal = new ChecklistGoal(); break;
                         default: continue;
                     }
 
@@ -102,8 +103,9 @@ public class SaveInstance
         JsonObject jsonObject = new JsonObject();
 
         jsonObject.Add("SimpleGoal",new JsonArray());
+        jsonObject.Add("EternalGoal",new JsonArray());
         jsonObject.Add("SisypheanGoal",new JsonArray());
-        jsonObject.Add("QuestGoal",new JsonArray());
+        jsonObject.Add("ChecklistGoal",new JsonArray());
 
         foreach (Goal goal in _goals)
         {
@@ -141,10 +143,12 @@ public class SaveInstance
         {
             case "SimpleGoal":
                 return CreateGoal<SimpleGoal>();
+            case "EternalGoal":
+                return CreateGoal<EternalGoal>();
             case "SisypheanGoal":
                 return CreateGoal<SisypheanGoal>();
-            case "QuestGoal":
-                return CreateGoal<QuestGoal>();
+            case "ChecklistGoal":
+                return CreateGoal<ChecklistGoal>();
             default:
                 return null;
         }

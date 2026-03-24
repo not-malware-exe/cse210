@@ -1,15 +1,15 @@
 using System.Text.Json.Nodes;
 
-public class QuestGoal : QuantityGoal
+public class ChecklistGoal : QuantityGoal
 {
     private bool _completed = false;
 
-    public QuestGoal() : base() {}
-    public QuestGoal(string name, string description, int points, int bonusPoints, int bonusCompletions, int completions = 0, bool completed = false) : base(name, description, points, bonusPoints, bonusCompletions, completions)
+    public ChecklistGoal() : base() {}
+    public ChecklistGoal(string name, string description, int points, int bonusPoints, int bonusCompletions, int completions = 0, bool completed = false) : base(name, description, points, bonusPoints, bonusCompletions, completions)
     {
         _completed = completed;
     }
-    public override void SetupTypeName(){_typeName = "QuestGoal";}
+    public override void SetupTypeName(){_typeName = "ChecklistGoal";}
 
     // class attribute getters and setter
     public override void CreateGoal()

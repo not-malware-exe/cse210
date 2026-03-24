@@ -23,7 +23,7 @@ public abstract class Goal
     
     // class attribute getters and setter
     public string GetName() {return _name;}
-    public string GetDescription() {return _description;}
+    // public string GetDescription() {return _description;} // happy now
     public int GetPoints() {return _points;}
     public string GetTypename() {return _typeName;}
     public virtual void CreateGoal()

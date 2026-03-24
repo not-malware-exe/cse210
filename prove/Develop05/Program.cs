@@ -2,13 +2,13 @@ using System;
 
 class Program
 {
-    static List<string> goalTypeNames = ["SimpleGoal","SisypheanGoal","QuestGoal"];
+    static List<string> goalTypeNames = ["SimpleGoal","EternalGoal","SisypheanGoal","ChecklistGoal"];
 
     static void Main(string[] args)
     {
         string filePath = "save.json"; //Inputs.InputStr("Enter save file destination: ");
         SaveInstance saveInstance = new SaveInstance(filePath,-100);
-        saveInstance.LoadFromJson();
+        // saveInstance.LoadFromJson();
 
         bool quit = false;
 
@@ -24,8 +24,10 @@ class Program
             Console.WriteLine("'Create Goal'");
             Console.WriteLine("'Record Goal'");
             Console.WriteLine("'Clear Goals'");
+            Console.WriteLine("'Load'");
+            Console.WriteLine("'Save'");
             Console.WriteLine("'Stop Being Mean To Me'");
-            Console.WriteLine("Any else to quit.");
+            Console.WriteLine("\nType any of the above wrong or type anything else -> Quit");
 
             string option = Inputs.InputStr("\nEnter your option: ");
             Console.Clear();
@@ -115,6 +117,12 @@ class Program
                     Inputs.InputStr("Enter anything to continue: ");
 
                     break;
+                case "Load":
+                    saveInstance.LoadFromJson();
+                    break;
+                case "Save":
+                    saveInstance.SaveToJson();
+                    break;
                 case "Stop Being Mean To Me":
                     Console.WriteLine("No");
                     Thread.Sleep(1000);
@@ -134,6 +142,6 @@ class Program
 
         } while(!quit);
 
-        saveInstance.SaveToJson();
+        // saveInstance.SaveToJson(); // happy now
     }
 }
